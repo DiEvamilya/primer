@@ -7,6 +7,14 @@
   <title>{% block title %} {% endblock %}</title>
   <link href="{% static 'css/blog.css' %}" rel="stylesheet">
 </head>
+<header>
+  {% if user.is_authenticated %}
+    <div class="us"> {{ user.username }} | <a href="{% url 'users:logout' %}">Выйти</a></div>
+    {% else %}
+    <div class="us"><a href="{% url 'users:login' %}">Войти</a> | <a href="#">Регистрация</a></div>
+        {% endif %}
+</div>
+</header>
 <body>
 <div id="content">
   {% block content %} {% endblock %}
