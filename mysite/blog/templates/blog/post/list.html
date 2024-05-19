@@ -17,7 +17,13 @@
 
 <!--{% include 'pagination.html' with page=posts %}-->
 <!--&lt;!&ndash;используется для view функции представления&ndash;&gt;-->
-
+<ul>
+{% for group in user_groups %}
+        <li>{{ group.name }}</li>
+    {% empty %}
+        <li>Вы не состоите ни в одной группе.</li>
+    {% endfor %}
+    </ul>
 {% include 'pagination.html' with page=page_obj %}
 <!--используется для класса представления-->
 

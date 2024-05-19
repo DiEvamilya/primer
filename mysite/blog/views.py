@@ -111,3 +111,5 @@ def send_email_view(request):
 
     return HttpResponse('Письмо успешно отправлено!')
 
+
+
